@@ -3,15 +3,15 @@ class ArticlesController < ApplicationController
   end
 
   def create
-    # every rails model can be initialized with respective attributes
-    # these attributes are automatically mapped to respective database locations
-    # do that :
-    @article = Article.new(params[:article])
+    @article = Article.new(article_params)
 
-    # @article.save is responsible for saving the model in the database.
     @article.save
     redirect_to @article
-    # render plain: params[:article].inspect
   end
+
+  private
+    def article_params
+      params.require(:article).permit(:title, :text)
+    end
 
 end
