@@ -19,11 +19,12 @@ class ArticlesController < ApplicationController
       redirect_to @article
     else
       render 'new'
+    end
   end
 
   private
     def article_params
       params.require(:article).permit(:title, :text)
     end
-  end
+
 end
