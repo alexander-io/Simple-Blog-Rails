@@ -7,6 +7,9 @@ class CreateArticles < ActiveRecord::Migration[5.0]
   # possible to undo a moigration after its been appliied to the database.
   # migration filenames include a timestamp to ensure that theyre processed in the
   # order that they were created
+
+  # create a method named change which will be called when running migration
+
   def change
     create_table :articles do |t|
       t.string :title
