@@ -8,6 +8,20 @@
   <%= @article.text %>
 </p>
 
+<!--  -->
+<h2>Comments</h2>
+<% @article.comments.each do |comment| %>
+  <p>
+    <strong>Commenter:</strong>
+    <%= comment.commenter %>
+  </p>
+
+  <p>
+    <strong>Comment:</strong>
+    <%= comment.body %>
+  </p>
+<% end %>
+
 <!--
 add form on the article show page that creates a new comment
 by calling the CommentsController create action. The form_for call
