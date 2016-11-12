@@ -8,7 +8,12 @@
   <%= @article.text %>
 </p>
 
-<!--  -->
+<!--
+List out each comment for the particular article
+this listing includes :
+commenter
+comment
+ -->
 <h2>Comments</h2>
 <% @article.comments.each do |comment| %>
   <p>
@@ -41,11 +46,6 @@ uses an array, which will build a nested route, such as /articles/1/comments
     <%= f.submit %>
   </p>
 <% end %>
-
-
-
-
-
 
 <%= link_to 'Edit', edit_article_path %>
 <%= link_to 'Back', articles_path %>
